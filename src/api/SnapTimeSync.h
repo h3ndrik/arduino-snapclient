@@ -176,7 +176,7 @@ public:
     resample_factor = factor;
   }
 
-  void updateServerTime(uint32_t serverMillis) override {}
+  void updateServerTime(uint32_t serverMillis) override { update_count++; }
 
   float getFactor() { return resample_factor; }
 
