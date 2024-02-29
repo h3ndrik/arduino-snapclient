@@ -123,7 +123,7 @@ class SnapOutput : public AudioInfoSupport {
 
   bool isStarted() { return is_audio_begin_called; }
 
- protected:
+// protected:
   const char *TAG = "SnapOutput";
   AudioOutput *out = nullptr;
   AudioInfo audio_info;
