@@ -166,7 +166,7 @@ class SnapOutput : public AudioInfoSupport {
 
     // open resampler
     auto res_cfg = resample.defaultConfig();
-    res_cfg.step_size = 1.009082;
+    res_cfg.step_size = 1.0;
     res_cfg.copyFrom(audio_info);
     resample.begin(res_cfg);
 
