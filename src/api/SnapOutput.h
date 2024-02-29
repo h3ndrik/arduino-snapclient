@@ -90,6 +90,7 @@ class SnapOutput : public AudioInfoSupport {
   void setOutput(AudioOutput &output) {
     this->out = &output;  // final output
     resample.setStream(output);
+    resample.setBuffered(true);
     vol_stream.setStream(resample);  // adjust volume
     timed_stream.setStream(vol_stream);
     decoder_stream.setStream(&timed_stream);  // decode to pcm
@@ -168,6 +169,7 @@ class SnapOutput : public AudioInfoSupport {
     auto res_cfg = resample.defaultConfig();
     res_cfg.step_size = 1.0123;
     res_cfg.copyFrom(audio_info);
+    resample.setBuffered(true);
     resample.begin(res_cfg);
 
     // set up timed stream
